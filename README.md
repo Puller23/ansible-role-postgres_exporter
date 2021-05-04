@@ -1,38 +1,52 @@
-Role Name
+Ansible Role: redis exporter
 =========
 
-A brief description of the role goes here.
+Deploy prometheus [redis exporter](https://https://github.com/oliver006/postgres_exporter) using ansible.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+- Ansible >= 2.7
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+All variables which can be overridden are stored in [defaults/main.yml](defaults/main.yml) and are listed in the table below.
+
+| Name           | Default Value | Description                        |
+| -------------- | ------------- | -----------------------------------|
+| `postgres_exporter_version` | 0.9.0 | Postgres exporter package version.|
+| `postgres_exporter_install_dir` | "" | Allows to use local packages instead of ones distributed on github.|
+| `postgres_exporter_web_listen_adress` | "0.0.0.0:9187" | Address on which postgres exporter will listen |
+| `postgres_exporter_web_telemetry_path` | "metrics" | Path under which to expose metrics |
+| `postgres_exporter_db_ip` | "localhost" | IP Address of the postgres instance |
+| `postgres_exporter_db_port` | 5432 | Port of the postgres instance |
+| `postgres_exporter_db_password` | "" | Password of the postgres instance |
+| `postgres_exporter_system_user` | "postgres" | User for systemd service |
+| `postgres_exporter_system_group` | "postgres" | User for systemd service |
+
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+none
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+Use it in a playbook as follows:
+```yaml
+- hosts: all
+  roles:
+    - puller23.postgres_exporter
+```
 
 License
 -------
 
-BSD
+MIT
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+This role was created in 2021 by Gregor Bartels.
