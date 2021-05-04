@@ -1,4 +1,4 @@
-Ansible Role: redis exporter
+Ansible Role: postgres exporter
 =========
 
 [![CI](https://github.com/Puller23/ansible-role-postgres_exporter/actions/workflows/ci.yml/badge.svg)](https://github.com/Puller23/ansible-role-postgres_exporter/actions/workflows/ci.yml)
