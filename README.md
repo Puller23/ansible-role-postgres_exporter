@@ -1,7 +1,9 @@
 Ansible Role: redis exporter
 =========
 
-Deploy prometheus [redis exporter](https://https://github.com/oliver006/postgres_exporter) using ansible.
+[![CI](https://github.com/Puller23/ansible-role-postgres_exporter/actions/workflows/ci.yml/badge.svg)](https://github.com/Puller23/ansible-role-postgres_exporter/actions/workflows/ci.yml)
+
+Deploy prometheus [postgres exporter](https://github.com/prometheus-community/postgres_exporter) using ansible.
 
 Requirements
 ------------
